@@ -1,4 +1,4 @@
-# BroadcastReceiversInAction
+# Broadcast Receivers In Action
 Little bit about catching the broadcast :) 
 Well *Broadcast Receivers* simply respond to broadcast messages from other applications or from the system itself. 
 These messages are sometime called events or intents. 
