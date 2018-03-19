@@ -17,7 +17,7 @@ A broadcast receiver is implemented as a subclass of BroadcastReceiver class and
  * Created by sachin .
  */
 
-public class MyGlobalReceiver extends BroadcastReceiver {
+   public class MyGlobalReceiver extends BroadcastReceiver {
 
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
