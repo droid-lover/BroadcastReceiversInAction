@@ -31,18 +31,8 @@ A broadcast receiver is implemented as a subclass of BroadcastReceiver class and
     
             if (intent.getAction() == "android.intent.action.ACTION_POWER_CONNECTED") {
                 Toast.makeText(context, "POWER_CONNECTED.", Toast.LENGTH_LONG).show();
-    
-            } else if (intent.getAction() == "android.intent.action.ACTION_POWER_DISCONNECTED") {
-                Toast.makeText(context, "POWER_DISCONNECTED.", Toast.LENGTH_LONG).show();
-            } else if (intent.getAction() == "android.intent.action.ACTION_BATTERY_OKAY") {
-                Toast.makeText(context, "ACTION_BATTERY_OKAY.", Toast.LENGTH_LONG).show();
-            } else if (intent.getAction() == "android.intent.action.AIRPLANE_MODE") {
-                Toast.makeText(context, "AIRPLANE_MODE.", Toast.LENGTH_LONG).show();
-            } else if (intent.getAction() == "android.intent.action.ACTION_BATTERY_LOW") {
-                Toast.makeText(context, "ACTION_BATTERY_LOW.", Toast.LENGTH_LONG).show();
-            }else if (intent.getAction() == "android.intent.action.DATE_CHANGED") {
-                Toast.makeText(context, "DATE_CHANGED.", Toast.LENGTH_LONG).show();
-            }else if (intent.getAction() == "CUSTOM_ACTION") {
+                //we can do here our task
+            } else if (intent.getAction() == "CUSTOM_ACTION") {
                 Toast.makeText(context, "THIS IS MY CUSTOM_ACTION.", Toast.LENGTH_LONG).show();
             } else {
     
