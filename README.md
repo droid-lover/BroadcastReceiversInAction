@@ -13,12 +13,28 @@ There are following two important steps to make BroadcastReceiver works for the 
 1.) Creating the Broadcast Receiver.
 A broadcast receiver is implemented as a subclass of BroadcastReceiver class and overriding the onReceive() method where each message is received as a Intent object parameter.
 
-public class MyReceiver extends BroadcastReceiver {
-   @Override
-   public void onReceive(Context context, Intent intent) {
-      Toast.makeText(context, "Intent Detected.", Toast.LENGTH_LONG).show();
-      //Here we can do our work after we get this event action here
-   }
+/**
+ * Created by sachin .
+ */
+
+public class MyGlobalReceiver extends BroadcastReceiver {
+
+
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+    @Override
+    public void onReceive(Context context, Intent intent) {
+        Log.d("Event", "Coming here of my Action" + intent);
+
+        Log.d("Event", "Action is " + intent.getAction());
+
+        if (intent.getAction() == "android.intent.action.ACTION_POWER_CONNECTED") {
+            Toast.makeText(context, "POWER_CONNECTED.", Toast.LENGTH_LONG).show();
+            //Here we can do our work after we get this event action here
+
+        } else {
+
+        }
+    }
 }
 
 2.) Registering Broadcast Receiver
