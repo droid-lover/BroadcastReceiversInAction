@@ -13,29 +13,44 @@ There are following two important steps to make BroadcastReceiver works for the 
 1.) Creating the Broadcast Receiver.
 A broadcast receiver is implemented as a subclass of BroadcastReceiver class and overriding the onReceive() method where each message is received as a Intent object parameter.
 
-/**
- * Created by sachin .
- */
 
 
+    /**
+     * Created by sachin on 19/03/18.
+     */
+    
     public class MyGlobalReceiver extends BroadcastReceiver {
-
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-    @Override
-    public void onReceive(Context context, Intent intent) {
-        Log.d("Event", "Coming here of my Action" + intent);
-
-        Log.d("Event", "Action is " + intent.getAction());
-
-        if (intent.getAction() == "android.intent.action.ACTION_POWER_CONNECTED") {
-            Toast.makeText(context, "POWER_CONNECTED.", Toast.LENGTH_LONG).show();
-            //Here we can do our work after we get this event action here
-
-        } else {
-
+    
+    
+        @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Log.d("Event", "Coming here of my Action" + intent);
+    
+            Log.d("Event", "Action is " + intent.getAction());
+    
+            if (intent.getAction() == "android.intent.action.ACTION_POWER_CONNECTED") {
+                Toast.makeText(context, "POWER_CONNECTED.", Toast.LENGTH_LONG).show();
+    
+            } else if (intent.getAction() == "android.intent.action.ACTION_POWER_DISCONNECTED") {
+                Toast.makeText(context, "POWER_DISCONNECTED.", Toast.LENGTH_LONG).show();
+            } else if (intent.getAction() == "android.intent.action.ACTION_BATTERY_OKAY") {
+                Toast.makeText(context, "ACTION_BATTERY_OKAY.", Toast.LENGTH_LONG).show();
+            } else if (intent.getAction() == "android.intent.action.AIRPLANE_MODE") {
+                Toast.makeText(context, "AIRPLANE_MODE.", Toast.LENGTH_LONG).show();
+            } else if (intent.getAction() == "android.intent.action.ACTION_BATTERY_LOW") {
+                Toast.makeText(context, "ACTION_BATTERY_LOW.", Toast.LENGTH_LONG).show();
+            }else if (intent.getAction() == "android.intent.action.DATE_CHANGED") {
+                Toast.makeText(context, "DATE_CHANGED.", Toast.LENGTH_LONG).show();
+            }else if (intent.getAction() == "CUSTOM_ACTION") {
+                Toast.makeText(context, "THIS IS MY CUSTOM_ACTION.", Toast.LENGTH_LONG).show();
+            } else {
+    
+            }
         }
     }
-    }
+
+
 
 2.) Registering Broadcast Receiver
 
